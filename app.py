@@ -14,18 +14,16 @@ goldbeck_box_images = []
 #-------- List of image file paths ----------
 
 model_image_paths = [
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\1.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\2.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\3.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\4.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\5.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\6.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\7.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\8.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\9.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\10.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\11.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\Model 5\\resized\\12.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\1.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\2.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\3.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\4.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\5.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\6.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\7.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\8.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\9.jpg',
+    'D:\\WS 23-24\\master\\projekt\\python\\Model 4\\resized\\10.jpg',
 ]
 
 goldbeck_image_paths = [
@@ -38,22 +36,19 @@ goldbeck_image_paths = [
     'D:\\WS 23-24\\master\\projekt\\python\\GBImages\\resized\\6.jpg',
     'D:\\WS 23-24\\master\\projekt\\python\\GBImages\\resized\\7.jpg',
     'D:\\WS 23-24\\master\\projekt\\python\\GBImages\\resized\\8.jpg',
-    'D:\\WS 23-24\\master\\projekt\\python\\GBImages\\resized\\9.jpg',
 ]
 
 def save_result_images(result_image_list):
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\1.jpg', result_image_list[0])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\2.jpg', result_image_list[1])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\3.jpg', result_image_list[2])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\4.jpg', result_image_list[3])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\5.jpg', result_image_list[4])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\6.jpg', result_image_list[5])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\7.jpg', result_image_list[6])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\8.jpg', result_image_list[7])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\9.jpg', result_image_list[8])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\10.jpg', result_image_list[9])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\11.jpg', result_image_list[10])
-    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 5\\result\\12.jpg', result_image_list[11])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\1.jpg', result_image_list[0])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\2.jpg', result_image_list[1])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\3.jpg', result_image_list[2])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\4.jpg', result_image_list[3])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\5.jpg', result_image_list[4])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\6.jpg', result_image_list[5])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\7.jpg', result_image_list[6])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\8.jpg', result_image_list[7])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\9.jpg', result_image_list[8])
+    cv.imwrite('D:\\WS 23-24\\master\\projekt\\python\\Model 4\\result\\10.jpg', result_image_list[9])
 
     print('result images saved successfully!')
 
@@ -74,7 +69,7 @@ def find_height(source_image_list, result_image_list, hight_list, final_height, 
 
         # -------- processing image ----------
         gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)        
-        ret, thresh = cv.threshold(gray, 90, 255, cv.THRESH_BINARY)
+        ret, thresh = cv.threshold(gray, 43, 255, cv.THRESH_BINARY)
         contours, hierarchies = cv.findContours(thresh, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)        
         largest_contour = max(contours, key=cv.contourArea)
         x, y, w, h = cv.boundingRect(largest_contour)
